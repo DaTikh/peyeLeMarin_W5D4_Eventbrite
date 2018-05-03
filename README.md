@@ -1,24 +1,60 @@
-# README
+# Week n°5 - Day n°4 - THP by Team BDX - EventBrite
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Projet du jour :
 
-Things you may want to cover:
+Le projet du jour consiste a construire une application compatible Heroku, qui permet de gérer des évènements sur une plateforme. Ces évènements sont créés et gérés par des utilisateurs. Le but est de déployer les méthodes vues précédement, alias CRUD, push sur Heroku, création de modèles/controllers/helpers/routes/etc..
 
-* Ruby version
+## Pré-requis et installation :
 
-* System dependencies
+1 - Veuillez svp vous relever de votre PLS.
 
-* Configuration
+2 - Veuillez cloner ce repo sur votre machine avec la commande suivante 
 
-* Database creation
+```
+  $ git clone git@github.com:DaTikh/peyeLeMarin_W5D4_Eventbrite.git
+```
 
-* Database initialization
+3 - Se rendre dans le dossier souhaité, et effectuer cette ligne de commande suivante pour initialiser le fonctionnement:
 
-* How to run the test suite
+```
+  $ bundle update && bundle install --without production && rails db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Fonctionnement des applications :
 
-* ...
+Pour tester l'application, deux choix s'offrent à vous :
+
+ - En local :
+
+Une fois placé(e) dans le dossier souhaité, effectuer la commande suivante :
+```
+  $ rails s
+```
+Vous pouvez maintenant observer le fonctionnement de l'application (console of course) via l'adresse :
+```
+  @ http://localhost:3000/
+```
+
+  - Ou sur le sites déployé :
+
+teventbrite-thp-bdx :
+```
+  @ https://eventbrite-thp-bdx.herokuapp.com/
+```
+
+*PS : la console est totalement possible pour aller tester des créations de Movie/Director ou Gossip/Comment.*
+
+*NOTA : $ = terminal || > = console rails || @ = web browser*
+
+## Conditions de test des exercices pour les corrections
+
+**Ruby 2.5.1**
+
+**Bundle 1.16.1**
+
+## Contributeurs
+
+@bab - Baptiste ROGEON
+
+@massimo - Maxime FLEURY
