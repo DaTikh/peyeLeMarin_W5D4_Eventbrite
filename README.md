@@ -1,5 +1,9 @@
 # Week n°5 - Day n°4 - THP by Team BDX - EventBrite
 
+
+## Cher correcteur/trice, je suis désolé... Mon app est dégueulasse mais j'ai plus le temps de faire du joli !! :D :$
+
+
 ## Projet du jour :
 
 Le projet du jour consiste a construire une application compatible Heroku, qui permet de gérer des évènements sur une plateforme. Ces évènements sont créés et gérés par des utilisateurs. Le but est de déployer les méthodes vues précédement, alias CRUD, push sur Heroku, création de modèles/controllers/helpers/routes/etc..
