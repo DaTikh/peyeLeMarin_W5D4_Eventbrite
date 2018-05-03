@@ -14,4 +14,15 @@ module EventsHelper
     @past
   end
 
+  def attending?
+    @attending = []
+    current_user.attending_events.each do |event|
+      if event.date > Time.now
+        @attending << event
+      end
+    end
+
+
+  end
+
 end

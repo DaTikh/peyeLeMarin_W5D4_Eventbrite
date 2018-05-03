@@ -20,6 +20,7 @@ class EventsController < ApplicationController
     if logged_in?
       @events = Event.all
       events_aging(@events)
+      @attending_list = attending?
     else
       flash[:danger] = "Veuillez vous connecter pour accéder à la liste des évènements."
       redirect_to login_path
@@ -29,9 +30,19 @@ class EventsController < ApplicationController
   def show
     if logged_in?
       @event = Event.find(params[:id])
+      @attending_list = attending?
     else
       redirect_to login_path
     end
+  end
+
+  def subscribe
+    @event = Event.find(params[:event])
+    @current_user = current_user
+    @event.attendees << @current_user
+    @event.attendees
+    flash[:danger] = "Tu as bien rejoint l'évènement !!"
+    redirect_to user_path(@current_user.id)
   end
 
   private

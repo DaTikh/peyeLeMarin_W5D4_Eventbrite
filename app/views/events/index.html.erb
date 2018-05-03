@@ -8,6 +8,7 @@
         <p><%= event.date %></p>
         <p><%= event.place %></p>
         <%= link_to "Plus d'infos", event_path(event.id), class: "btn btn-outline-info" %>
+        <%= if !(@attending_list.include?(event)) then link_to "Subscribe !", {:action => :subscribe, :event => event}, :method => :put, class: "btn btn-outline-success" end %>
       </div>
     <% end %>
 </div>
