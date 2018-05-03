@@ -1,4 +1,5 @@
 <h4>Bienvenue <%= @user.name %></h4>
+<h2>Retiens bien ton ID pour te login plus tard : <strong><%= @user.id %></strong></h2>
 
 <p>Voici les évènements que tu as créé :</p>
 <% @created_events.each_with_index do |event, i| %>
@@ -18,6 +19,7 @@
     <p><%= event.description %></p>
     <p><%= event.date %></p>
     <p><%= event.place %></p>
+      <%= link_to "Unsubscribe", {:controller => :events, :action => :unsubscribe, :event => event.id}, :method => :put, class: "btn btn-outline-danger" %>
   </div>
 <% end %>
 

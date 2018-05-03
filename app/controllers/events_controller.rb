@@ -40,7 +40,16 @@ class EventsController < ApplicationController
     @event = Event.find(params[:event])
     @current_user = current_user
     @event.attendees << @current_user
-    flash[:danger] = "Tu as bien rejoint l'évènement !!"
+    flash[:success] = "Tu as bien rejoint l'évènement !!"
+    redirect_to user_path(@current_user.id)
+  end
+
+  def unsubscribe
+    @event = Event.find(params[:event])
+    @current_array = []
+    @current_array << current_user
+    @event.attendees -= @current_array
+    flash[:success] = "Tu as bien quitté l'évènement !!"
     redirect_to user_path(@current_user.id)
   end
 

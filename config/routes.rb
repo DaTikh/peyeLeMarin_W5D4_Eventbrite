@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :users
   resources :events
   put "/events", to: "events#subscribe", as: "subscribe"
+  put "/users/:id/:event", to: "events#unsubscribe", as: "unsubscribe"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
