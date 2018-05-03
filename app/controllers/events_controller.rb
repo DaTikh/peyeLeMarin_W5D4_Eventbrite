@@ -40,7 +40,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:event])
     @current_user = current_user
     @event.attendees << @current_user
-    @event.attendees
     flash[:danger] = "Tu as bien rejoint l'évènement !!"
     redirect_to user_path(@current_user.id)
   end
