@@ -13,4 +13,4 @@
   <% end %>
 </div>
 
-<%= if !(@attending_list.include?(@event)) then link_to "Subscribe !", {:action => :subscribe, :event => @event}, :method => :put, class: "btn btn-outline-success" end %>
+<%= if !(@attending_list.include?(@event)) && @event.date > Time.now then link_to "Subscribe !", {:action => :subscribe, :event => @event}, :method => :put, class: "btn btn-outline-success" end %>
