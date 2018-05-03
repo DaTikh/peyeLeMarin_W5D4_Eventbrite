@@ -4,14 +4,17 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find(params[:session][:id])
-    if user
-      log_in user
-      redirect_to user
+    if User.ids.include?(params[:session][:id])
+     user = User.find(params[:session][:id])
+      if user
+        log_in user
+        redirect_to user
+      end
     else
       flash.now[:danger] = "ID inconnue"
       render 'new'
     end
+
   end
 
   def destroy
