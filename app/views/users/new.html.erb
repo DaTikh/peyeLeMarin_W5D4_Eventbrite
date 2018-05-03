@@ -1,2 +1,16 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="container">
+<h3>Nouvel utilisateur</h3>
+
+        <%= form_for @user, url: {action: "create"} do |u| %>
+        <h4 class="text-danger" id="error"><%= flash[:error] %></h4>
+        <div class="form-group">
+            <label>Ton pseudo ici :</label><br>
+            <%= u.text_field :name %><br>
+        </div>
+        <div class="form-group">
+            <button type=submit class="btn btn-primary">Créer le nouveau User</button>
+        </div>
+
+        <% end %>
+
+</div>
