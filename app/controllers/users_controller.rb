@@ -6,15 +6,18 @@ class UsersController < ApplicationController
   def create
     @user = User.create(params_user)
     if @user.save
-      redirect_to user_path(@user.id)
+      log_in @user
+      redirect_to @user
     else
-      flash.now[:error] = "Couldn't save."
+      flash.now[:danger] = "Couldn't save."
       render action: "new"
     end
   end
 
   def show
     @user = User.find(params[:id])
+    @events = Event.where(creator_id: @user.id)
+    @current_user = @user
   end
 
   private

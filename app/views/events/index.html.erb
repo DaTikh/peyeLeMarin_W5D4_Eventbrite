@@ -1,0 +1,11 @@
+<h1>Index des events</h1>
+
+<% @events.each_with_index do |event, i| %>
+<div class="form-group border">
+<!-- <p><%= event.creator.name %></p> -->
+<p><%= event.description %></p>
+<p><%= event.date %></p>
+<p><%= event.place %></p>
+<%= link_to "Plus d'infos", event_path(event.id), class: "btn btn-outline-warning" %>
+</div>
+<% end %>

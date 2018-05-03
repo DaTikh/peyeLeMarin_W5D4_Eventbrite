@@ -1,1 +1,14 @@
 <h4>Bienvenue <%= @user.name %></h4>
+
+<p>Voici les évènements que tu as créé :</p>
+
+<% @events.each_with_index do |event, i| %>
+  <div class="form-group border">
+    <p><%= event.creator.name %></p>
+    <p><%= event.description %></p>
+    <p><%= event.date %></p>
+    <p><%= event.place %></p>
+  </div>
+<% end %>
+
+<%= link_to "Créer un évènement", new_event_path, class: "btn btn-warning" %>

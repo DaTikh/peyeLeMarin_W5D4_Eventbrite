@@ -3,11 +3,20 @@
   <li class="nav-item">
     <%= link_to "HOME", root_path, class: "nav-link navbar-brand btn btn-danger" %>
   </li>
+  <% if logged_in? %>
   <li class="nav-item">
-    <%= link_to "Item 1", "#", class: "nav-link navbar-brand btn btn-primary" %>
+    <%= link_to "Profile", current_user, class: "nav-link navbar-brand btn btn-primary" %>
   </li>
   <li class="nav-item">
-    <%= link_to "Item 2", "#", class: "nav-link navbar-brand btn btn-success" %>
+    <%= link_to "Index events", events_path, class: "nav-link navbar-brand btn btn-success" %>
   </li>
+  <li class="nav-item">
+    <%= link_to "Log out", logout_path, method: :delete, class: "nav-link navbar-brand btn btn-danger"%>
+  </li>
+  <% else %>
+  <li class="nav-item">
+    <%= link_to "Sign up now!", signup_path, class: "nav-link navbar-brand btn btn-success" %>
+  </li>
+  <% end %>
 </ul>
 </header>

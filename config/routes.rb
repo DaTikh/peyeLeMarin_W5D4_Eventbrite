@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  root "users#new"
-  get "/user/new", to: "users#new", as: "new_user"
-  post "/user/new", to: 'users#create', as: "create_user"
-  get "/user/:id", to: 'users#show', as: "user"
+  root "sessions#new"
+  get "/signup", to: "users#new", as: "signup"
+  get "/login", to: 'sessions#new', as: "login"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy", as: "logout"
+  resources :users
+  resources :events
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

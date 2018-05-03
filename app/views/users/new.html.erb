@@ -2,9 +2,8 @@
 <h3>Nouvel utilisateur</h3>
 
         <%= form_for @user, url: {action: "create"} do |u| %>
-        <h4 class="text-danger" id="error"><%= flash[:error] %></h4>
         <div class="form-group">
-            <label>Ton pseudo ici :</label><br>
+            <%= u.label "Ton pseudo ici :" %><br>
             <%= u.text_field :name %><br>
         </div>
         <div class="form-group">
