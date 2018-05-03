@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @events = Event.where(creator_id: @user.id)
     @current_user = @user
+    events_aging(@events)
   end
 
   private

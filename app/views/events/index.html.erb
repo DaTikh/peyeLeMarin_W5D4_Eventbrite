@@ -1,11 +1,26 @@
 <h1>Index des events</h1>
 
-<% @events.each_with_index do |event, i| %>
-<div class="form-group border">
-<!-- <p><%= event.creator.name %></p> -->
-<p><%= event.description %></p>
-<p><%= event.date %></p>
-<p><%= event.place %></p>
-<%= link_to "Plus d'infos", event_path(event.id), class: "btn btn-outline-warning" %>
+<div class="container">
+  <h4>Upcoming events !!</h4>
+    <% @upcoming.each_with_index do |event, i| %>
+      <div class="form-group border border-info">
+        <p><%= event.description %></p>
+        <p><%= event.date %></p>
+        <p><%= event.place %></p>
+        <%= link_to "Plus d'infos", event_path(event.id), class: "btn btn-outline-info" %>
+      </div>
+    <% end %>
 </div>
-<% end %>
+
+
+<div class="container">
+  <h4>Past...</h4>
+    <% @past.each_with_index do |event, i| %>
+      <div class="form-group border border-muted">
+        <p><%= event.description %></p>
+        <p><%= event.date %></p>
+        <p><%= event.place %></p>
+        <%= link_to "Plus d'infos", event_path(event.id), class: "btn btn-outline-secondary" %>
+      </div>
+  <% end %>
+</div>

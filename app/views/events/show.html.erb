@@ -6,3 +6,9 @@
 <p><%= @event.date %></p>
 <p><%= @event.place %></p>
 </div>
+
+<div class="form-group border">
+  <% @event.attendees.each do |att| %></p>
+  <p><%= att.name %></p>
+  <% end %>
+</div>

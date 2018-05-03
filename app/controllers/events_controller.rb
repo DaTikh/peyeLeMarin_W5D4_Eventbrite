@@ -19,7 +19,9 @@ class EventsController < ApplicationController
   def index
     if logged_in?
       @events = Event.all
+      events_aging(@events)
     else
+      flash[:danger] = "Veuillez vous connecter pour accéder à la liste des évènements."
       redirect_to login_path
     end
   end
